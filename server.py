@@ -331,6 +331,14 @@ async def generate_table(
 
 
 if __name__ == "__main__":
-    import uvicorn
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(mcp.sse_app(), host="0.0.0.0", port=port)
+    import sys
+    
+    # Check if running on Render (has PORT env) or locally
+    if os.environ.get("PORT"):
+        # Remote deployment (Render) - use SSE
+        import uvicorn
+        port = int(os.environ.get("PORT", 8000))
+        uvicorn.run(mcp.sse_app(), host="0.0.0.0", port=port)
+    else:
+        # Local (Claude Desktop) - use stdio
+        mcp.run(transport="stdio")
