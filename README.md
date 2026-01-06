@@ -36,8 +36,8 @@ the MacBook Air uses the M3 chip...
 ### Local Development
 ```bash
 # Clone
-git clone https://github.com/Freon-Gas/think-and-show-mcp.git
-cd think-and-show-mcp
+git clone https://github.com/Freon-Gas/visualizer-mcp.git
+cd visualizer-mcp
 
 # Install dependencies
 pip install -r requirements.txt
@@ -78,7 +78,7 @@ Add to `claude_desktop_config.json`:
 
 ## 📡 Deployed Endpoint
 ```
-SSE: https://think-and-show-mcp.onrender.com/sse
+SSE: https://visualizer-mcp.onrender.com/sse
 ```
 
 ---
